@@ -11,9 +11,9 @@ import android.database.sqlite.SQLiteOpenHelper;
  */
 public class DatabaseHelper extends SQLiteOpenHelper {
 
-    public static final String DATABASE_NAME = "SHOPPING_DB.db";
+    public static final String DATABASE_NAME = "SHOPPING_DB";
     public static final int DATABASE_VERSION = 7;
-    public static final String DATABASE_TABLE = "shopping_list";
+    public static final String DATABASE_TABLE = "SHOPPING_LIST";
 
     public static final String COL_ID = "_id";
     public static final String COL_NAME = "ITEM_NAME";
@@ -34,6 +34,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             + COL_PRICE + " TEXT, "
             + COL_TYPE + " TEXT ) ";
 
+
+
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(createString);
@@ -51,7 +53,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     // since they are both objects we can use the object instance as the mediator variable???????
     public static DatabaseHelper getInstance(Context context){
         if (instance == null){
-            instance = new DatabaseHelper(context);
+            instance = new DatabaseHelper(context.getApplicationContext());
         }
         return instance;
     }

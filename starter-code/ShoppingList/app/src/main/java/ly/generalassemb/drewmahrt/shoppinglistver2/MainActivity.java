@@ -4,6 +4,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -30,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
         listView = (ListView) findViewById(R.id.shopping_list_view);
 
         Cursor cursor = DatabaseHelper.getInstance(MainActivity.this).getItemList();
+        Log.d("Test", cursor.getCount()+"");
 
         CursorAdapter customadapter = new CursorAdapter(MainActivity.this, cursor, CursorAdapter.FLAG_REGISTER_CONTENT_OBSERVER) {
 
