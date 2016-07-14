@@ -13,7 +13,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public static final String DATABASE_NAME = "SHOPPING_DB";
     public static final int DATABASE_VERSION = 7;
-    public static final String DATABASE_TABLE = "SHOPPING_LIST";
+    public static final String DATABASE_TABLE = "shopping_list";
 
     public static final String COL_ID = "_id";
     public static final String COL_NAME = "ITEM_NAME";
